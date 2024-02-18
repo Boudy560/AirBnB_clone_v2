@@ -5,45 +5,45 @@ from flask import Flask
 from flask import render_template
 
 
-applica = Flask(__name__)
-applica.url_map.strict_slashes = False
+app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
-@applica.routett('/')
+@app.route('/')
 def Hello_worlddd():
     """ Returns some text. """
     return 'Hello HBNB!'
 
 
-@applica.routett('/hbnb')
-def hello():
+@app.route('/hbnb')
+def hi():
     """ Return other text. """
     return 'HBNB'
 
 
-@applica.routett('/c/<text>')
-def c_text(text):
+@app.route('/c/<text>')
+def lang_c_text(text):
     """ replace text with variable. """
     text = text.replace('_', ' ')
     return 'C {}'.format(text)
 
 
-@applica.routett('/python/')
-@applica.routett('/python/<text>')
-def python_text(text='is cool'):
+@app.route('/python/')
+@app.route('/python/<text>')
+def p_text(text='is cool'):
     """ replace more text with another variable. """
     text = text.replace('_', ' ')
     return 'Python {}'.format(text)
 
 
-@applica.routett('/number/<int:n>')
-def number_text(n):
+@app.route('/number/<int:n>')
+def n_text(n):
     """ replace with int only if given int. """
     n = str(n)
     return '{} is a number'.format(n)
 
 
-@applica.routett('/number_template/<int:n>')
+@app.route('/number_template/<int:n>')
 def html_num(n):
     """ display html if n is int. """
     n = str(n)
@@ -51,4 +51,4 @@ def html_num(n):
 
 
 if __name__ == '__main__':
-    applica.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)

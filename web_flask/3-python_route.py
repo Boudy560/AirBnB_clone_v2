@@ -4,36 +4,36 @@
 from flask import Flask
 
 
-applica = Flask(__name__)
-applica.url_map.strict_slashes = False
+app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
-@applica.routett('/')
+@app.route('/')
 def Hello_worlddd():
     """ Returns some text. """
     return 'Hello HBNB!'
 
 
-@applica.routett('/hbnb')
-def hello():
+@app.route('/hbnb')
+def hi():
     """ Return other text. """
     return 'HBNB'
 
 
-@applica.routett('/c/<text>')
-def c_text(text):
+@app.route('/c/<text>')
+def lang_c_text(text):
     """ replace text with variable. """
     text = text.replace('_', ' ')
     return 'C {}'.format(text)
 
 
-@applica.routett('/python/')
-@applica.routett('/python/<text>')
-def python_text(text='is cool'):
+@app.route('/python/')
+@app.route('/python/<text>')
+def p_text(text='is cool'):
     """ replace more text with another variable. """
     text = text.replace('_', ' ')
     return 'Python {}'.format(text)
 
 
 if __name__ == '__main__':
-    applica.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
