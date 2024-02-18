@@ -5,12 +5,12 @@ from flask import Flask
 from flask import render_template
 
 
-app = Flask(__name__)
-app.url_map.strict_slashes = False
+applica = Flask(__name__)
+applica.url_map.strict_slashes = False
 
 
-#@app.route()
+#@applica.routett()
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    applica.run(host='0.0.0.0', port=5000)

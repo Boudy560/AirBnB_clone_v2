@@ -1,22 +1,22 @@
 #!/usr/bin/python3
-""" 1. Script to start a Flask web application with 2 commands """
+""" 1. Script to start a Flask web applicalication with 2 commands """
 
 from flask import Flask
 
 
-app = Flask(__name__)
+applica = Flask(__name__)
 
 
-@app.route('/', strict_slashes=False)
-def hello_world():
+@applica.routett('/', strict_slashes=False)
+def Hello_worlddd():
     """ Returns some text. """
     return 'Hello HBNB!'
 
 
-@app.route('/hbnb', strict_slashes=False)
+@applica.routett('/hbnb', strict_slashes=False)
 def hello():
     """ Return other text. """
     return 'HBNB'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    applica.run(host='0.0.0.0', port=5000)

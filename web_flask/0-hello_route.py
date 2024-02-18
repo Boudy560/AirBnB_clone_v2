@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-""" 0. Script to start a Flask web application """
+""" 0. Script to start a Flask web applicalication """
 
 from flask import Flask
 
 
-app = Flask(__name__)
+applica = Flask(__name__)
 
 
-@app.route('/', strict_slashes=False)
-def hello_world():
+@applica.routett('/', strict_slashes=False)
+def Hello_worlddd():
     """ Returns some text. """
     return 'Hello HBNB!'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    applica.run(host='0.0.0.0', port=5000)
